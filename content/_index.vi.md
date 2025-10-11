@@ -6,12 +6,14 @@ chapter: false
 ---
 
 # Báo cáo thực tập
+
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Phạm Bảo Phi
 
-&emsp; **Số điện thoại:** 0399212721
+&emsp; **Họ và tên:** Trương Thái Như
 
-&emsp; **Email:** phipbse185046@fpt.edu.vn
+&emsp; **Số điện thoại:** 0328416716
+
+&emsp; **Email:** nhuttse180082@fpt.edu.vn
 
 &emsp; **Trường:** Đại học FPT TP.HCM
 
@@ -25,9 +27,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 08/09/2025 đến ngày 12/12/2025
 
-![Ảnh đại diện của bạn](/images/avatar.png)
-
-
+![Ảnh đại diện của bạn](/images/anh1.jpg)
 
 ### Nội dung báo cáo
 

@@ -5,7 +5,6 @@ weight: 1
 chapter: false
 ---
 
-    
 # Internship Report
 
 <!-- {{% notice warning %}}
@@ -13,11 +12,12 @@ chapter: false
 {{% /notice %}} -->
 
 ### Student Information:
-&emsp; **Full Name:** Pham Bao Phi  
 
-&emsp; **Phone Number:** 0399212721 
+&emsp; **Full Name:** Truong Thai Nhu
 
-&emsp; **Email:** phipbse185046@fpt.edu.vn
+&emsp; **Phone Number:** 0328416716
+
+&emsp; **Email:** nhuttse180082@fpt.edu.vn
 
 &emsp; **University:** Ho Chi Minh City University of FPT
 
@@ -31,7 +31,7 @@ chapter: false
 
 &emsp; **Internship Duration:** From 08/09/2025 to 12/12/2025
 
-![Your profile picture](/images/avatar.png)
+![Your profile picture](/images/Anh.jpg)
 
 ### Report Content
 
