@@ -1,74 +1,74 @@
 ---
 title: "Blog 3"
 date: 2025-07-10
-weight: 1
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
 
-# Artificial Intelligence: Supercharge your AI workflows by connecting to SageMaker Studio from Visual Studio Code
+# Trí tuệ Nhân tạo: Tăng tốc quy trình làm việc AI của bạn bằng cách kết nối với SageMaker Studio từ Visual Studio Code
 
-**by Durga Sury, Raj Bagwe, Sri Aakash Mandavilli, and Edward Sun on 10 JUL 2025**
-_Categories: Advanced (300), Amazon SageMaker Studio, Technical How-to_
+**bởi Durga Sury, Raj Bagwe, Sri Aakash Mandavilli, và Edward Sun vào ngày 10 tháng 7 năm 2025**
+_Danh mục: Nâng cao (300), Amazon SageMaker Studio, Hướng dẫn Kỹ thuật_
 
 ---
 
-AI developers and machine learning (ML) engineers can now use the capabilities of Amazon SageMaker Studio directly from their local Visual Studio Code (VS Code). With this capability, you can use your customized local VS Code setup, including AI-assisted development tools, custom extensions, and debugging tools while accessing compute resources and your data in SageMaker Studio. By accessing familiar model development features, data scientists can maintain their established workflows, preserve their productivity tools, and seamlessly develop, train, and deploy machine learning, deep learning and generative AI models.
+Các nhà phát triển AI và kỹ sư học máy (ML) hiện có thể sử dụng các khả năng của Amazon SageMaker Studio trực tiếp từ Visual Studio Code (VS Code) cục bộ của họ. Với khả năng này, bạn có thể sử dụng thiết lập VS Code cục bộ tùy chỉnh của mình, bao gồm các công cụ phát triển hỗ trợ AI, các tiện ích mở rộng tùy chỉnh và các công cụ gỡ lỗi trong khi truy cập tài nguyên tính toán và dữ liệu của bạn trong SageMaker Studio. Bằng cách truy cập các tính năng phát triển mô hình quen thuộc, các nhà khoa học dữ liệu có thể duy trì quy trình làm việc đã thiết lập của họ, bảo toàn các công cụ năng suất và phát triển, huấn luyện cũng như triển khai các mô hình học máy, học sâu và AI tạo sinh một cách liền mạch.
 
-In this post, we show you how to remotely connect your local VS Code to SageMaker Studio development environments to use your customized development environment while accessing Amazon SageMaker AI compute resources.
+Trong bài viết này, chúng tôi chỉ cho bạn cách kết nối từ xa VS Code cục bộ của bạn với các môi trường phát triển SageMaker Studio để sử dụng môi trường phát triển tùy chỉnh của bạn trong khi truy cập các tài nguyên tính toán của Amazon SageMaker AI.
 
-The local integrated development environment (IDE) connection capability delivers three key benefits for developers and data scientists:
+Khả năng kết nối môi trường phát triển tích hợp (IDE) cục bộ mang lại ba lợi ích chính cho các nhà phát triển và nhà khoa học dữ liệu:
 
-- **Familiar development environment with scalable compute:** Work in your familiar IDE environment while harnessing the purpose-built model development environment of SageMaker AI. Keep your preferred themes, shortcuts, extensions, productivity, and AI tools while accessing SageMaker AI features.
-- **Simplify operations:** With a few clicks, you can minimize the complex configurations and administrative overhead of setting up remote access to SageMaker Studio spaces. The integration provides direct access to Studio spaces from your IDE.
-- **Enterprise grade security:** Benefit from secure connections between your IDE and SageMaker AI through automatic credentials management and session maintenance. In addition, code execution remains within the controlled boundaries of SageMaker AI.
+- **Môi trường phát triển quen thuộc với khả năng tính toán có thể mở rộng:** Làm việc trong môi trường IDE quen thuộc của bạn trong khi khai thác môi trường phát triển mô hình chuyên dụng của SageMaker AI. Giữ các chủ đề, phím tắt, tiện ích mở rộng, năng suất và công cụ AI ưa thích của bạn trong khi truy cập các tính năng của SageMaker AI.
+- **Đơn giản hóa vận hành:** Chỉ với một vài cú nhấp chuột, bạn có thể giảm thiểu các cấu hình phức tạp và chi phí quản trị khi thiết lập quyền truy cập từ xa vào các không gian (spaces) SageMaker Studio. Việc tích hợp cung cấp quyền truy cập trực tiếp vào các không gian Studio từ IDE của bạn.
+- **Bảo mật cấp doanh nghiệp:** Hưởng lợi từ các kết nối an toàn giữa IDE của bạn và SageMaker AI thông qua quản lý thông tin xác thực tự động và duy trì phiên. Ngoài ra, việc thực thi mã vẫn nằm trong ranh giới được kiểm soát của SageMaker AI.
 
-This feature bridges the gap between local development preferences and cloud-based machine learning resources, so that teams can improve their productivity while using the features of Amazon SageMaker AI.
+Tính năng này thu hẹp khoảng cách giữa các sở thích phát triển cục bộ và các tài nguyên học máy dựa trên đám mây, để các nhóm có thể cải thiện năng suất của họ trong khi sử dụng các tính năng của Amazon SageMaker AI.
 
-## Solution overview
+## Tổng quan giải pháp
 
-The following diagram showcases the interaction between your local IDE and SageMaker Studio spaces.
+Sơ đồ sau đây minh họa sự tương tác giữa IDE cục bộ của bạn và các không gian SageMaker Studio.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-1.png)
 
-The solution architecture consists of three main components:
+Kiến trúc giải pháp bao gồm ba thành phần chính:
 
-- **Local computer:** Your development machine running VS Code with AWS Toolkit extension installed.
-- **SageMaker Studio:** A unified, web-based ML development environment to seamlessly build, train, deploy, and manage machine learning and analytics workflows at scale using integrated AWS tools and secure, governed access to your data.
-- **AWS Systems Manager:** A secure, scalable remote access and management service that enables seamless connectivity between your local VS Code and SageMaker Studio spaces to streamline ML development workflows.
+- **Máy tính cục bộ:** Máy phát triển của bạn đang chạy VS Code với tiện ích mở rộng AWS Toolkit đã được cài đặt.
+- **SageMaker Studio:** Một môi trường phát triển ML thống nhất, dựa trên web để xây dựng, huấn luyện, triển khai và quản lý các quy trình học máy và phân tích một cách liền mạch ở quy mô lớn bằng cách sử dụng các công cụ AWS tích hợp và quyền truy cập vào dữ liệu của bạn được bảo mật và quản trị.
+- **AWS Systems Manager:** Một dịch vụ quản lý và truy cập từ xa an toàn, có thể mở rộng cho phép kết nối liền mạch giữa VS Code cục bộ của bạn và các không gian SageMaker Studio để hợp lý hóa các quy trình phát triển ML.
 
-The connection flow supports two options:
+Luồng kết nối hỗ trợ hai tùy chọn:
 
-- **Direct launch (deep link):** Users can initiate the connection directly from the SageMaker Studio web interface by choosing Open in VS Code, which automatically launches their local VS Code instance.
-- **AWS Toolkit connection:** Users can connect through AWS Toolkit extension in VS Code by browsing available SageMaker Studio spaces and selecting their target environment.
+- **Khởi chạy trực tiếp (deep link):** Người dùng có thể bắt đầu kết nối trực tiếp từ giao diện web SageMaker Studio bằng cách chọn Open in VS Code (Mở trong VS Code), thao tác này sẽ tự động khởi chạy phiên bản VS Code cục bộ của họ.
+- **Kết nối AWS Toolkit:** Người dùng có thể kết nối thông qua tiện ích mở rộng AWS Toolkit trong VS Code bằng cách duyệt các không gian SageMaker Studio có sẵn và chọn môi trường mục tiêu của họ.
 
-In addition to the preceding, users can also connect to their space directly from their IDE terminal using SSH. For instructions on connecting using SSH, refer to documentation here.
+Ngoài những điều trên, người dùng cũng có thể kết nối trực tiếp với không gian của họ từ terminal của IDE bằng SSH. Để biết hướng dẫn về cách kết nối bằng SSH, hãy tham khảo tài liệu tại đây.
 
-After connecting, developers can:
+Sau khi kết nối, các nhà phát triển có thể:
 
-- Use their custom VS Code extensions and tools
-- Remotely access and use their space’s storage
-- Run their AI and ML workloads in SageMaker compute environments
-- Work with notebooks in their preferred IDE
-- Maintain the same security parameters as the SageMaker Studio web environment
+- Sử dụng các công cụ và tiện ích mở rộng VS Code tùy chỉnh của họ
+- Truy cập và sử dụng từ xa bộ lưu trữ của không gian
+- Chạy khối lượng công việc AI và ML của họ trong các môi trường tính toán SageMaker
+- Làm việc với các notebook trong IDE ưa thích của họ
+- Duy trì các tham số bảo mật tương tự như môi trường web SageMaker Studio
 
-## Solution implementation
+## Triển khai giải pháp
 
-### Prerequisites
+### Điều kiện tiên quyết
 
-To try the remote IDE connection, you must meet the following prerequisites:
+Để thử kết nối IDE từ xa, bạn phải đáp ứng các điều kiện tiên quyết sau:
 
-- You have access to a SageMaker Studio domain with connectivity to the internet. For domains set up in VPC-only mode, your domain should have a route out to the internet through a proxy, or a NAT gateway. If your domain is completely isolated from the internet, see Connect to VPC with subnets without internet access for setting up the remote connection. If you do not have a Studio domain, you can create one using the quick setup or custom setup option.
-- You have permissions to update the SageMaker Studio domain or user execution role in AWS Identity and Access Management (IAM).
-- You have the latest stable VS Code with Microsoft Remote SSH (version 0.74.0 or later), and AWS Toolkit extension (version v3.68.0 or later) installed on your local machine. Optionally, if you want to connect to SageMaker spaces directly from VS Code, you should be authenticated to access AWS resources using IAM or AWS IAM Identity Center credentials. See the administrator documentation for AWS Toolkit authentication support.
-- You use compatible SageMaker Distribution images (2.7+ and 3.1+) for running SageMaker Studio spaces, or a custom image.
-- If you’re initiating the connection from the IDE, you already have a user profile in the SageMaker Studio domain you want to connect to, and the spaces are already created using the Studio UI or through APIs. The AWS Toolkit does not allow creation or deletion of spaces.
+- Bạn có quyền truy cập vào một miền (domain) SageMaker Studio có kết nối internet. Đối với các miền được thiết lập ở chế độ chỉ VPC, miền của bạn phải có đường dẫn ra internet thông qua proxy hoặc cổng NAT. Nếu miền của bạn hoàn toàn bị cô lập khỏi internet, hãy xem Kết nối với VPC có mạng con không có quyền truy cập internet để thiết lập kết nối từ xa. Nếu bạn chưa có miền Studio, bạn có thể tạo một miền bằng tùy chọn thiết lập nhanh hoặc thiết lập tùy chỉnh.
+- Bạn có quyền cập nhật miền SageMaker Studio hoặc vai trò thực thi của người dùng trong AWS Identity and Access Management (IAM).
+- Bạn đã cài đặt VS Code ổn định mới nhất với Microsoft Remote SSH (phiên bản 0.74.0 trở lên) và tiện ích mở rộng AWS Toolkit (phiên bản v3.68.0 trở lên) trên máy cục bộ của mình. Tùy chọn, nếu bạn muốn kết nối trực tiếp với các không gian SageMaker từ VS Code, bạn cần được xác thực để truy cập các tài nguyên AWS bằng thông tin xác thực IAM hoặc AWS IAM Identity Center. Xem tài liệu quản trị viên về hỗ trợ xác thực AWS Toolkit.
+- Bạn sử dụng các image SageMaker Distribution tương thích (2.7+ và 3.1+) để chạy các không gian SageMaker Studio, hoặc một image tùy chỉnh.
+- Nếu bạn đang bắt đầu kết nối từ IDE, bạn đã có hồ sơ người dùng trong miền SageMaker Studio mà bạn muốn kết nối, và các không gian đã được tạo bằng giao diện người dùng Studio hoặc qua API. AWS Toolkit không cho phép tạo hoặc xóa các không gian.
 
-### Set up necessary permissions
+### Thiết lập các quyền cần thiết
 
-We’ve launched the StartSession API for remote IDE connectivity. Add the sagemaker:StartSession permission to your user’s role so that they can remotely connect to a space.
+Chúng tôi đã ra mắt API StartSession cho khả năng kết nối IDE từ xa. Thêm quyền sagemaker:StartSession vào vai trò của người dùng của bạn để họ có thể kết nối từ xa với một không gian.
 
-For the deep-linking experience, the user starts the remote session from the Studio UI. Hence, the domain default execution role, or the user’s execution role should allow the user to call the StartSession API. Modify the permissions on your domain or user execution role by adding the following policy statement:
+Đối với trải nghiệm deep-linking, người dùng bắt đầu phiên từ xa từ giao diện người dùng Studio. Do đó, vai trò thực thi mặc định của miền, hoặc vai trò thực thi của người dùng phải cho phép người dùng gọi API StartSession. Sửa đổi các quyền trên miền hoặc vai trò thực thi người dùng của bạn bằng cách thêm câu lệnh chính sách sau:
 
 ```json
 {
@@ -89,7 +89,7 @@ For the deep-linking experience, the user starts the remote session from the Stu
 }
 ```
 
-If you’re initializing the connection to SageMaker Studio spaces directly from VS Code, your AWS credentials should allow the user to list the spaces, start or stop a space, and initiate a connection to a running space. Make sure that your AWS credentials allow the following API actions:
+Nếu bạn đang khởi tạo kết nối đến các không gian SageMaker Studio trực tiếp từ VS Code, thông tin xác thực AWS của bạn phải cho phép người dùng liệt kê các không gian, bắt đầu hoặc dừng một không gian, và bắt đầu kết nối đến một không gian đang chạy. Đảm bảo rằng thông tin xác thực AWS của bạn cho phép các hành động API sau:
 
 ```json
 {
@@ -115,7 +115,7 @@ If you’re initializing the connection to SageMaker Studio spaces directly from
 }
 ```
 
-This initial IAM policy provides a quick-start foundation for testing SageMaker features. Organizations can implement more granular access controls using resource Amazon Resource Name (ARN) constraints or attribute-based access control (ABAC). With the introduction of the StartSession API, you can restrict access by defining space ARNs in the resource section or implementing condition tags according to your specific security needs, as shown in the following example.
+Chính sách IAM ban đầu này cung cấp nền tảng khởi đầu nhanh để thử nghiệm các tính năng SageMaker. Các tổ chức có thể triển khai các kiểm soát truy cập chi tiết hơn bằng cách sử dụng các ràng buộc Tên tài nguyên Amazon (ARN) hoặc kiểm soát truy cập dựa trên thuộc tính (ABAC). Với sự ra mắt của API StartSession, bạn có thể hạn chế quyền truy cập bằng cách xác định các ARN không gian trong phần tài nguyên hoặc thực hiện các thẻ điều kiện theo nhu cầu bảo mật cụ thể của bạn, như được hiển thị trong ví dụ sau.
 
 ```json
 {
@@ -136,86 +136,86 @@ This initial IAM policy provides a quick-start foundation for testing SageMaker 
 }
 ```
 
-### Enable remote connectivity and launch VS Code from SageMaker Studio
+### Kích hoạt kết nối từ xa và khởi chạy VS Code từ SageMaker Studio
 
-To connect to a SageMaker space remotely, the space must have remote access enabled.
-Before running a space on the Studio UI, you can toggle Remote access on to enable the feature, as shown in the following screenshot.
+Để kết nối với một không gian SageMaker từ xa, không gian đó phải được kích hoạt quyền truy cập từ xa.
+Trước khi chạy một không gian trên giao diện người dùng Studio, bạn có thể bật Remote access (Truy cập từ xa) để kích hoạt tính năng này, như được hiển thị trong ảnh chụp màn hình sau.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/10/screenshot-enable-remote-access-outline-1.png)
 
-After the feature is enabled, choose Run space to start the space. After the space is running, choose Open in VS Code to launch VS Code.
+Sau khi tính năng được kích hoạt, chọn Run space (Chạy không gian) để bắt đầu không gian. Sau khi không gian đang chạy, chọn Open in VS Code (Mở trong VS Code) để khởi chạy VS Code.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/10/screenshot-open-vs-code-arrow.png)
 
-The first time you choose this option, you’ll be prompted by your browser to confirm opening VS Code. Select the checkbox Always allow studio to confirm and then choose Open Visual Studio Code.
+Lần đầu tiên bạn chọn tùy chọn này, trình duyệt của bạn sẽ nhắc bạn xác nhận việc mở VS Code. Chọn hộp kiểm Always allow studio (Luôn cho phép studio) để xác nhận và sau đó chọn Open Visual Studio Code (Mở Visual Studio Code).
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-4.jpeg)
 
-This will open VS Code, and you will be prompted to update your SSH configuration. Choose Update SSH config to complete the connection. This is also a one-time setup, and you will not be prompted for future connections.
+Thao tác này sẽ mở VS Code, và bạn sẽ được nhắc cập nhật cấu hình SSH của mình. Chọn Update SSH config (Cập nhật cấu hình SSH) để hoàn tất kết nối. Đây cũng là thiết lập một lần và bạn sẽ không được nhắc cho các kết nối trong tương lai.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-5-300x220.jpeg)
 
-On successful connection, a new window launches that is connected to the SageMaker Studio space and has access to the Studio space’s storage.
+Khi kết nối thành công, một cửa sổ mới sẽ khởi chạy được kết nối với không gian SageMaker Studio và có quyền truy cập vào bộ lưu trữ của không gian Studio.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-6.jpeg)
 
-### Connect to the space from VS Code
+### Kết nối tới không gian từ VS Code
 
-Using the AWS Toolkit, you can list the spaces, start, connect to a space, or connect to a running space that has remote connection enabled. If a running space doesn’t have remote connectivity enabled, you can stop the space from the AWS Toolkit and then select the Connect icon to automatically turn on remote connectivity and start the space. The following section describes the experience in detail.
+Sử dụng AWS Toolkit, bạn có thể liệt kê các không gian, bắt đầu, kết nối tới một không gian, hoặc kết nối tới một không gian đang chạy đã được kích hoạt kết nối từ xa. Nếu một không gian đang chạy không được kích hoạt kết nối từ xa, bạn có thể dừng không gian từ AWS Toolkit và sau đó chọn biểu tượng Connect (Kết nối) để tự động bật kết nối từ xa và bắt đầu không gian. Phần sau đây mô tả trải nghiệm chi tiết.
 
-After you’re authenticated into AWS, from AWS Toolkit, access the AWS Region where your SageMaker Studio domain is. You will now see a SageMaker AI section. Choose the SageMaker AI section to list the spaces in your Region. If you’re connected using IAM, the toolkit lists the spaces across domains and users in your Region. See the [Optional] Filter spaces to a specific domain or user below on instructions to view spaces for a particular user profile. For Identity Center users, the list is already filtered to display only the spaces owned by you.
+Sau khi bạn đã xác thực vào AWS, từ AWS Toolkit, truy cập Khu vực (Region) AWS nơi có miền SageMaker Studio của bạn. Bây giờ bạn sẽ thấy phần SageMaker AI. Chọn phần SageMaker AI để liệt kê các không gian trong Khu vực của bạn. Nếu bạn đang kết nối bằng IAM, bộ công cụ sẽ liệt kê các không gian trên khắp các miền và người dùng trong Khu vực của bạn. Xem [Tùy chọn] Lọc không gian theo miền hoặc người dùng cụ thể bên dưới để biết hướng dẫn xem các không gian cho một hồ sơ người dùng cụ thể. Đối với người dùng Identity Center, danh sách đã được lọc để chỉ hiển thị các không gian do bạn sở hữu.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-7.jpeg)
 
-After you identify the space, choose the connectivity icon as shown in the screenshot below to connect to the space.
+Sau khi bạn xác định được không gian, chọn biểu tượng kết nối như được hiển thị trong ảnh chụp màn hình bên dưới để kết nối tới không gian.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-8.jpeg)
 
-**Optional: Filter spaces to a specific domain or user**
+**Tùy chọn: Lọc không gian theo miền hoặc người dùng cụ thể**
 
-When connecting to an account using IAM, you will see a list of spaces in the account and region. This can be overwhelming if the account has tens or hundreds of domains, users and spaces. The toolkit provides a filter utility that helps you quickly filter the list of spaces to a specific user profile or a list of user profiles.
-Next to SageMaker AI, choose the filter icon as shown in the following screenshot.
+Khi kết nối với một tài khoản bằng IAM, bạn sẽ thấy danh sách các không gian trong tài khoản và khu vực. Điều này có thể gây choáng ngợp nếu tài khoản có hàng chục hoặc hàng trăm miền, người dùng và không gian. Bộ công cụ cung cấp tiện ích lọc giúp bạn nhanh chóng lọc danh sách không gian theo một hồ sơ người dùng cụ thể hoặc danh sách các hồ sơ người dùng.
+Bên cạnh SageMaker AI, chọn biểu tượng bộ lọc như được hiển thị trong ảnh chụp màn hình sau.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-9.jpeg)
 
-You will now see a list of user profiles and domains. Scroll through the list or enter user profile or domain name, and then select or unselect to filter the list of spaces by domain or user profile.
+Bây giờ bạn sẽ thấy danh sách các hồ sơ người dùng và miền. Cuộn qua danh sách hoặc nhập tên hồ sơ người dùng hoặc miền, sau đó chọn hoặc bỏ chọn để lọc danh sách các không gian theo miền hoặc hồ sơ người dùng.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-10.jpeg)
 
-## Use cases
+## Các trường hợp sử dụng
 
-Following use cases demonstrate how AI developers and machine learning (ML) engineers can use local integrated development environment (IDE) connection capability.
+Các trường hợp sử dụng sau đây minh họa cách các nhà phát triển AI và kỹ sư học máy (ML) có thể sử dụng khả năng kết nối môi trường phát triển tích hợp (IDE) cục bộ.
 
-### Connecting to a notebook kernel
+### Kết nối với kernel của notebook
 
-After you’re connected to the space, you can start creating and running notebooks and scripts right from your local development environment. By using this method, you can use the managed infrastructure provided by SageMaker for resource-intensive AI tasks while coding in a familiar environment. You can run notebook cells on your SageMaker Distribution or custom image kernels, and can choose the IDE that maximizes your productivity. Use the following steps to create and connect your notebook to a remote kernel –
+Sau khi bạn đã kết nối với không gian, bạn có thể bắt đầu tạo và chạy các notebook và tập lệnh ngay từ môi trường phát triển cục bộ của mình. Bằng cách sử dụng phương pháp này, bạn có thể sử dụng cơ sở hạ tầng được quản lý do SageMaker cung cấp cho các tác vụ AI tiêu tốn nhiều tài nguyên trong khi viết mã trong môi trường quen thuộc. Bạn có thể chạy các ô (cells) notebook trên SageMaker Distribution hoặc các kernel image tùy chỉnh, và có thể chọn IDE tối đa hóa năng suất của bạn. Sử dụng các bước sau để tạo và kết nối notebook của bạn với một kernel từ xa –
 
-1.  On your VS Code file explorer, choose the plus (+) icon to create a new file, name it remote-kernel.ipynb.
-2.  Open the notebook and run a cell (for example, print ("Hello from remote IDE"). VS Code will show a pop-up for installing the Python and Jupyter extension.
-3.  Choose Install/Enable suggested extensions.
-4.  After the extensions are installed, VS Code will automatically launch the kernel selector. You can also choose Select Kernel on the right to view the list of kernels.
-5.  For the next steps, follow the directions for the space you’re connected to.
+1. Trên trình khám phá tệp VS Code của bạn, chọn biểu tượng dấu cộng (+) để tạo tệp mới, đặt tên là remote-kernel.ipynb.
+2. Mở notebook và chạy một ô (ví dụ: print ("Hello from remote IDE"). VS Code sẽ hiển thị cửa sổ bật lên để cài đặt tiện ích mở rộng Python và Jupyter.
+3. Chọn Install/Enable suggested extensions (Cài đặt/Kích hoạt các tiện ích mở rộng được đề xuất).
+4. Sau khi các tiện ích mở rộng được cài đặt, VS Code sẽ tự động khởi chạy bộ chọn kernel. Bạn cũng có thể chọn Select Kernel (Chọn Kernel) ở bên phải để xem danh sách các kernel.
+5. Đối với các bước tiếp theo, hãy làm theo hướng dẫn cho không gian mà bạn đang kết nối.
 
-**Code Editor spaces:**
-Select Python environments… and choose from a list of provided Python environments. After you are connected, you can start running the cells in your notebook.
+**Không gian Code Editor:**
+Chọn Python environments… (Môi trường Python…) và chọn từ danh sách các môi trường Python được cung cấp. Sau khi bạn được kết nối, bạn có thể bắt đầu chạy các ô trong notebook của mình.
 
-**JupyterLab spaces:**
-Select the Existing Jupyter Server… option to have the same kernel experience as the JupyterLab environment.
-If this is the first time connecting to JupyterLab spaces, you will need to configure the Jupyter server to view the same kernels as the remote server using the following steps.
+**Không gian JupyterLab:**
+Chọn tùy chọn Existing Jupyter Server… (Máy chủ Jupyter hiện có…) để có trải nghiệm kernel tương tự như môi trường JupyterLab.
+Nếu đây là lần đầu tiên kết nối với các không gian JupyterLab, bạn sẽ cần cấu hình máy chủ Jupyter để xem các kernel giống như máy chủ từ xa bằng các bước sau.
 
-1.  Choose Enter the URL of the running Jupyter Server and enter http://localhost:8888/jupyterlab/default/lab as the URL and press Enter.
-2.  Enter a custom server display name, for example, JupyterLab Space Default Server and press Enter.You will now be able to view the list of kernels that’s available on the remote Jupyter server. For consequent connections, this display name will be available for you to choose from when you select the existing Jupyter server option.
+1. Chọn Enter the URL of the running Jupyter Server (Nhập URL của Máy chủ Jupyter đang chạy) và nhập http://localhost:8888/jupyterlab/default/lab làm URL và nhấn Enter.
+2. Nhập tên hiển thị máy chủ tùy chỉnh, ví dụ: JupyterLab Space Default Server và nhấn Enter. Bây giờ bạn sẽ có thể xem danh sách các kernel có sẵn trên máy chủ Jupyter từ xa. Đối với các kết nối tiếp theo, tên hiển thị này sẽ có sẵn để bạn chọn khi bạn chọn tùy chọn máy chủ Jupyter hiện có.
 
-The following graphic shows the entire workflow. In this example, we’re running a JupyterLab space with the SageMaker Distribution image, so we can view the list of kernels available in the image.
+Hình ảnh sau đây hiển thị toàn bộ quy trình làm việc. Trong ví dụ này, chúng tôi đang chạy một không gian JupyterLab với image SageMaker Distribution, vì vậy chúng tôi có thể xem danh sách các kernel có sẵn trong image.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/14/python-kernels.gif)
 
-You can choose the kernel of your choice, for example, the Python 3 kernel, and you can start running the notebook cells on the remote kernel. With access to the SageMaker managed kernels, you can now focus on model development rather than infrastructure and runtime management, while using the development environment you know and trust.
+Bạn có thể chọn kernel bạn chọn, ví dụ: kernel Python 3, và bạn có thể bắt đầu chạy các ô notebook trên kernel từ xa. Với quyền truy cập vào các kernel được SageMaker quản lý, giờ đây bạn có thể tập trung vào phát triển mô hình thay vì quản lý cơ sở hạ tầng và thời gian chạy, trong khi sử dụng môi trường phát triển mà bạn biết và tin cậy.
 
-## Best practices and guardrails
+## Các phương pháp hay nhất và rào cản bảo vệ (guardrails)
 
-- Follow the principle of least privilege when allowing users to connect remotely to SageMaker Studio spaces applications. SageMaker Studio supports custom tag propagation, we recommend tagging each user with a unique identifier and using the tag to allow the StartSession API to only their private applications.
-- As an administrator, if you want to disable this feature for your users, you can enforce it using the sagemaker:RemoteAccess condition key. The following is an example policy.
+- Tuân thủ nguyên tắc đặc quyền tối thiểu khi cho phép người dùng kết nối từ xa với các ứng dụng không gian SageMaker Studio. SageMaker Studio hỗ trợ lan truyền thẻ (tag) tùy chỉnh, chúng tôi khuyên bạn nên gắn thẻ mỗi người dùng với một mã định danh duy nhất và sử dụng thẻ để cho phép API StartSession chỉ đối với các ứng dụng riêng tư của họ.
+- Với tư cách là quản trị viên, nếu bạn muốn vô hiệu hóa tính năng này cho người dùng của mình, bạn có thể thực thi nó bằng cách sử dụng khóa điều kiện sagemaker:RemoteAccess. Sau đây là một chính sách ví dụ.
 
 ```json
 {
@@ -247,39 +247,39 @@ You can choose the kernel of your choice, for example, the Python 3 kernel, and 
 }
 ```
 
-- When connecting remotely to the SageMaker Studio spaces from your local IDE, be aware of bandwidth constraints. For optimal performance, avoid using the remote connection to transfer or access large datasets. Instead, use data transfer methods built for cloud and in-place data processing to facilitate a smooth user experience. We recommend an instance with at least 8 GB of storage to start with, and the SageMaker Studio UI will throw an exception if you choose a smaller instance.
+- Khi kết nối từ xa với các không gian SageMaker Studio từ IDE cục bộ của bạn, hãy lưu ý đến các hạn chế về băng thông. Để có hiệu suất tối ưu, tránh sử dụng kết nối từ xa để chuyển hoặc truy cập các tập dữ liệu lớn. Thay vào đó, hãy sử dụng các phương pháp chuyển dữ liệu được xây dựng cho đám mây và xử lý dữ liệu tại chỗ để tạo điều kiện cho trải nghiệm người dùng mượt mà. Chúng tôi khuyên dùng một phiên bản (instance) có ít nhất 8 GB dung lượng lưu trữ để bắt đầu, và giao diện người dùng SageMaker Studio sẽ đưa ra ngoại lệ nếu bạn chọn một phiên bản nhỏ hơn.
 
-## Cleanup
+## Dọn dẹp
 
-If you have created a SageMaker Studio domain for the purposes of this post, remember to delete the applications, spaces, user profiles, and the domain. For instructions, see Delete a domain.
-For the SageMaker Studio spaces, use the idle shutdown functionality to avoid incurring charges for compute when it is not in use.
+Nếu bạn đã tạo một miền SageMaker Studio cho mục đích của bài đăng này, hãy nhớ xóa các ứng dụng, không gian, hồ sơ người dùng và miền. Để biết hướng dẫn, hãy xem Xóa một miền.
+Đối với các không gian SageMaker Studio, hãy sử dụng chức năng tắt khi nhàn rỗi để tránh phát sinh chi phí cho tính toán khi không sử dụng.
 
-## Conclusion
+## Kết luận
 
-The remote IDE connection feature for Amazon SageMaker Studio bridges the gap between local development environments and powerful ML infrastructure of SageMaker AI. With direct connections from local IDEs to SageMaker Studio spaces, developers and data scientists can now:
+Tính năng kết nối IDE từ xa cho Amazon SageMaker Studio thu hẹp khoảng cách giữa môi trường phát triển cục bộ và cơ sở hạ tầng ML mạnh mẽ của SageMaker AI. Với các kết nối trực tiếp từ IDE cục bộ đến các không gian SageMaker Studio, các nhà phát triển và nhà khoa học dữ liệu giờ đây có thể:
 
-- Maintain their preferred development environment while using the compute resources of SageMaker AI
-- Use custom extensions, debugging tools, and familiar workflows
-- Access governed data and ML resources within existing security boundaries
-- Choose between convenient deep linking or AWS Toolkit connection methods
-- Operate within enterprise-grade security controls and permissions
+- Duy trì môi trường phát triển ưa thích của họ trong khi sử dụng tài nguyên tính toán của SageMaker AI
+- Sử dụng các tiện ích mở rộng tùy chỉnh, công cụ gỡ lỗi và quy trình làm việc quen thuộc
+- Truy cập dữ liệu được quản trị và tài nguyên ML trong các ranh giới bảo mật hiện có
+- Chọn giữa các phương pháp kết nối deep linking thuận tiện hoặc AWS Toolkit
+- Hoạt động trong các kiểm soát bảo mật và quyền cấp doanh nghiệp
 
-This integration minimizes the productivity barriers of context switching while facilitating secure access to SageMaker AI resources. Get started today with SageMaker Studio remote IDE connection to connect your local development environment to SageMaker Studio and experience streamlined ML development workflows using your familiar tools while the powerful ML infrastructure of SageMaker AI.
+Sự tích hợp này giảm thiểu các rào cản năng suất của việc chuyển đổi ngữ cảnh trong khi tạo điều kiện truy cập an toàn vào các tài nguyên SageMaker AI. Hãy bắt đầu ngay hôm nay với kết nối IDE từ xa của SageMaker Studio để kết nối môi trường phát triển cục bộ của bạn với SageMaker Studio và trải nghiệm quy trình phát triển ML được hợp lý hóa bằng cách sử dụng các công cụ quen thuộc của bạn cùng cơ sở hạ tầng ML mạnh mẽ của SageMaker AI.
 
-## About the authors
+## Về các tác giả
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-12-100x100.jpeg)
 
-**Durga Sury** is a Senior Solutions Architect at Amazon SageMaker, where she helps enterprise customers build secure and scalable AI/ML systems. When she’s not architecting solutions, you can find her enjoying sunny walks with her dog, immersing herself in murder mystery books, or catching up on her favorite Netflix shows.
+**Durga Sury** là Kiến trúc sư Giải pháp Cấp cao tại Amazon SageMaker, nơi cô giúp các khách hàng doanh nghiệp xây dựng các hệ thống AI/ML an toàn và có thể mở rộng. Khi không thiết kế các giải pháp, bạn có thể thấy cô ấy tận hưởng những chuyến đi dạo đầy nắng với chú chó của mình, đắm mình trong những cuốn sách trinh thám giết người, hoặc xem các chương trình Netflix yêu thích của cô ấy.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-13.jpeg)
 
-**Edward Sun** is a Senior SDE working for SageMaker Studio at Amazon Web Services. He is focused on building interactive ML solution and simplifying the customer experience to integrate SageMaker Studio with popular technologies in data engineering and ML landscape. In his spare time, Edward is big fan of camping, hiking, and fishing, and enjoys spending time with his family.
+**Edward Sun** là Kỹ sư Phát triển Phần mềm (SDE) Cấp cao làm việc cho SageMaker Studio tại Amazon Web Services. Anh tập trung vào việc xây dựng giải pháp ML tương tác và đơn giản hóa trải nghiệm khách hàng để tích hợp SageMaker Studio với các công nghệ phổ biến trong bối cảnh kỹ thuật dữ liệu và ML. Trong thời gian rảnh rỗi, Edward là một người hâm mộ lớn của cắm trại, đi bộ đường dài và câu cá, và thích dành thời gian với gia đình.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-14-100x119.jpeg)
 
-**Raj Bagwe** is a Senior Solutions Architect at Amazon Web Services, based in San Francisco, California. With over 6 years at AWS, he helps customers navigate complex technological challenges and specializes in Cloud Architecture, Security and Migrations. In his spare time, he coaches a robotics team and plays volleyball. He can be reached at X handle @rajesh_bagwe.
+**Raj Bagwe** là Kiến trúc sư Giải pháp Cấp cao tại Amazon Web Services, có trụ sở tại San Francisco, California. Với hơn 6 năm làm việc tại AWS, anh giúp khách hàng điều hướng các thách thức công nghệ phức tạp và chuyên về Kiến trúc Đám mây, Bảo mật và Di chuyển. Trong thời gian rảnh rỗi, anh huấn luyện một đội robot và chơi bóng chuyền. Anh có thể được liên hệ tại tài khoản X @rajesh_bagwe.
 
 ![](https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2025/07/09/ML-19130-15-100x133.jpeg)
 
-**Sri Aakash Mandavilli** is a Software Engineer on the Amazon SageMaker Studio team, where he has been building innovative products since 2021. He specializes in developing various solutions across the Studio service to enhance the machine learning development experience. Outside of work, SriAakash enjoys staying active through hiking, biking, and taking long walks.
+**Sri Aakash Mandavilli** là Kỹ sư Phần mềm trong nhóm Amazon SageMaker Studio, nơi anh đã xây dựng các sản phẩm sáng tạo từ năm 2021. Anh chuyên phát triển các giải pháp khác nhau trên toàn bộ dịch vụ Studio để nâng cao trải nghiệm phát triển học máy. Ngoài công việc, SriAakash thích duy trì sự năng động thông qua việc đi bộ đường dài, đạp xe và đi bộ đường dài.

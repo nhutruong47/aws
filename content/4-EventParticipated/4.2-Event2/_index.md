@@ -6,10 +6,6 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** for your report, including this warning.
-{{% /notice %}}
-
 # Summary Report: “Vietnam Cloud Day 2025: Track for Builders”
 
 ### Date and Topic
