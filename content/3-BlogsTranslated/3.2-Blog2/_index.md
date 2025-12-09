@@ -1,126 +1,70 @@
 ---
 title: "Blog 2"
-date: 2025-09-09
-weight: 1
+date: 2025-09-10
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+# AWS Public Sector Blog: AWS expands its support of ARPA-H Sprint for Women’s Health performers
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+**by Dr. Dawn Heisey-Grove, Kat (Darula) Esser, MID, and Lauren Hollis | on 10 JUN 2025**
+_Categories: Announcements, Artificial Intelligence, AWS HealthOmics, Healthcare, Internet of Things, Life Sciences, Public Sector_
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+![AWS Header](https://d2908q01vomqb2.cloudfront.net/9e6a55b6b4563e652a23be9d623ca5055c356940/2025/06/06/AWS-Public-Sector-Blog-Featured-Images-Blog-Header-static-template-Autosaved-5.png)
 
----
+Amazon Web Services (AWS) provides innovative health researchers with the agility, adaptivity, and resilience they need to accelerate their research. Because of this, AWS expanded the scope of its commitment to the Advanced Research Projects Agency for Health (ARPA-H) Sprint for Women’s Health performers to include its Spark funding track awardees. These awardees focus on transformative early-stage research in women’s health.
 
-## Architecture Guidance
+These Spark awardees will receive AWS credits funded by AWS Social Responsibility & Impact and facilitated through the ARPA-H Investor Catalyst Hub, and technical support to guide them along their journey.
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+> “We’re excited for this collaboration with AWS to support our early-stage researchers in accelerating their commercialization journey,” stated **Chelsea Schiller**, Investor Catalyst Hub director.
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+Let’s take a look at some of the innovative research projects these awardees are pursuing:
 
-**The solution architecture is now as follows:**
+- **The California Institute of Technology (CalTech)** is developing a wearable sweat sensing system for objective chronic pain assessment. Their solution will simultaneously monitor multiple types of pain biomarkers in sweat. CalTech researchers will combine those biomarkers with vital sign data and create machine learning models that predict pain levels in real-time. Dr. Wei Gao, professor of medical engineering at CalTech, predicts that “real-time objective pain measurement will transform how the medical community treats patients, removing some of the guess work out of pain management.”
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+- **Nura Health** is also focused on biomarkers and precision medicine. Endometriosis diagnoses can take an average of 5-10 years to diagnose due to requiring an invasive surgical procedure for confirmation. Nura Health hopes to reduce that timeline to just days—and eliminate the need for surgical confirmation—by launching a platform that measures unique biomarkers found in blood while simultaneously analyzing genetic profiles in order to recommend precise, optimal treatments. “Our solution will bring faster diagnosis and a personalized treatment plan for women, significantly revamping the path to disease detection and symptom alleviation,” Varun Kapoor, co-founder and CEO of Nura Health, stated.
 
----
+- **Ancilia Biosciences** is initially applying its unique technology to develop a novel approach to treating bacterial vaginosis, a common, recurring condition that is associated with preterm birth, sexually transmitted infections, and infertility. “Our goal is to apply our advanced analytic and biological tools to unlock the vast potential of an entirely new class of therapies with major applications in both women’s health and broader indications,” declared Dr. Alexandra Sakatos, co-founder and CEO at Ancilia Biosciences.
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+- **General Proximity**, focused on transforming cancer treatment to a single drug, describes their solution as “pioneering proximity medicine in the battle against women’s cancer.” Their solution uses Induced Proximity Medicines to target a protein prevalent in breast and gynecological cancers.
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+These awardees will use AWS purpose-built health services designed to accelerate innovation. AWS provides the most comprehensive set of Internet of Things, artificial intelligence, and purpose-built health services designed to handle complex health data. These awardees will leverage AWS HealthOmics to transform their genomic, transcriptomic, and other omics data into insight. They can gain insights faster, supporting their efforts to move from idea to market with virtually unlimited compute capacity with the complete suite of high performance computing (HPC) products and services on AWS.
+
+The agility and scope of AWS services means health researchers have the flexibility they need to explore their research questions. Learn more about AWS health and life sciences services, and see how scientists leveraged AWS HPC tools to unlock disease insights. Then contact us for help in accelerating your research.
 
 ---
 
-## Technology Choices and Communication Scope
+_Acknowledgement: This research was, in part, funded by the Advanced Research Projects Agency for Health (ARPA-H). The views and conclusions contained in this blog post are those of the authors and should not be interpreted as representing the official policies, either expressed or implied, of the United States Government._
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+**TAGS:** announcement, Artificial Intelligence, AWS healthcare, AWS Public Sector, Internet of Things, life sciences
 
 ---
 
-## The Pub/Sub Hub
+### Authors
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+<img src="https://d2908q01vomqb2.cloudfront.net/9e6a55b6b4563e652a23be9d623ca5055c356940/2023/11/10/Dawn_Heisey_Grove.jpg" align="left" width="120" style="margin-right: 20px; margin-bottom: 10px; border-radius: 5px;" alt="Dr. Dawn Heisey-Grove" />
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+**Dr. Dawn Heisey-Grove**
 
----
+Dawn is a federal public health leader on the U.S. Federal Civilian team. She has spent her career finding new ways to use existing or new data to modernize public health surveillance and research. With a background in public health and informatics, Dr. Heisey-Grove leads innovation and modernization in public health agencies, supporting infectious and chronic disease, bioinformatics, environmental health, and more.
 
-## Core Microservice
+<br clear="left"/>
+<br>
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+<img src="https://d2908q01vomqb2.cloudfront.net/9e6a55b6b4563e652a23be9d623ca5055c356940/2025/09/10/Kat-Esser.jpg" align="left" width="120" style="margin-right: 20px; margin-bottom: 10px; border-radius: 5px;" alt="Kat Esser" />
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+**Kat (Darula) Esser, MID**
 
----
+Kat has over 25 years of experience leading the development and execution of social innovation portfolios that drive organizational growth for global public and private sector health systems and organizations. Currently she serves as impact initiatives leader for the AWS Social Impact & Responsibility team. In this role, Kat oversees the impact initiatives portfolio that uses cloud technology to address the most pressing global health and education issues. As a key part of this work, Kat oversaw the first of its kind AWS Health Equity X Cloud Technology Landscape Analysis and the AWS Food Value Chain x Cloud Technology Landscape Analysis that synthesizes current state, gaps and future opportunities at the intersection of health equity, nutrition security and cloud technology.
 
-## Front Door Microservice
+<br clear="left"/>
+<br>
 
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
+<img src="https://d2908q01vomqb2.cloudfront.net/9e6a55b6b4563e652a23be9d623ca5055c356940/2025/06/06/Picture1-3.jpg" align="left" width="120" style="margin-right: 20px; margin-bottom: 10px; border-radius: 5px;" alt="Lauren Hollis" />
 
----
+**Lauren Hollis**
 
-## Staging ER7 Microservice
+Lauren is a program manager for AWS Social Responsibility and Impact. She leverages her background in economics, healthcare research, and technology to support mission-driven organizations deliver social impact using AWS cloud technology. In her free time, Lauren enjoys reading and playing the piano and cello.
 
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
-
----
-
-## New Features in the Solution
-
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+<br clear="left"/>

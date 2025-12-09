@@ -1,57 +1,31 @@
 ---
-title: "Week 9 Worklog"
-date: 2025-09-09
-weight: 1
+title: "Worklog Tuần 9"
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Mục tiêu tuần 9:
 
-### Week 9 Objectives:
+- Hiểu rõ kiến trúc và vai trò của dịch vụ xử lý dữ liệu truyền tải **Amazon Kinesis** (Data Streams, Firehose).
+- Nắm vững các khái niệm về **AWS Glue** (Data Catalog, Crawler, ETL Jobs) trong quy trình ETL (Extract, Transform, Load).
+- Thành thạo việc tạo và quản lý **Glue Data Catalog** để lưu trữ Metadata về dữ liệu.
+- Thực hành kết nối Kinesis Firehose để truyền tải dữ liệu Stream vào S3.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Các công việc cần triển khai trong tuần này:
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc                                                                                                                                                                                                                                                                          | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
+| :-- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- | :-------------- | :---------------------------------------- |
+| 2   | - Đọc và hiểu kiến trúc của **Amazon Kinesis Data Streams (KDS)** (Shard, Producer, Consumer). <br> - Tìm hiểu về **Amazon Kinesis Data Firehose** để đơn giản hóa việc nạp dữ liệu. <br> - **Thực hành:** Tạo một Kinesis Data Firehose Delivery Stream.                          | 03/11/2025   | 03/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Tìm hiểu về **AWS Glue Data Catalog** (Kho lưu trữ Metadata) và **Glue Crawler**. <br> - **Thực hành:** <br>&emsp; + Tạo một IAM Role cho Glue Crawler. <br>&emsp; + Tạo Glue Crawler để quét dữ liệu mẫu trong S3 Bucket (từ tuần 4) và cập nhật Data Catalog.                  | 04/11/2025   | 04/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Tìm hiểu về **AWS Glue ETL Jobs** (Extract, Transform, Load) và môi trường thực thi (Spark, Python Shell). <br> - **Thực hành:** <br>&emsp; + Tạo một Glue ETL Job cơ bản (sử dụng Python Shell). <br>&emsp; + Cấu hình Job để đọc dữ liệu từ Data Catalog và ghi kết quả ra S3. | 05/11/2025   | 05/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - **Thực hành Tích hợp Kinesis:** <br> - **Thực hành:** <br>&emsp; + Định cấu hình Kinesis Firehose Delivery Stream đã tạo để đích đến là S3. <br>&emsp; + Mô phỏng việc nạp dữ liệu (data ingestion) vào Firehose và kiểm tra xem dữ liệu có được lưu trữ trên S3 hay không.      | 06/11/2025   | 06/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Dọn dẹp Tài nguyên & Ôn tập:** <br> - **Thực hành:** <br>&emsp; + Xóa Glue Job, Glue Crawler, và các bảng trong Data Catalog. <br>&emsp; + Xóa Kinesis Data Firehose Delivery Stream. <br>&emsp; + Tổng kết vai trò của Kinesis (Tốc độ) và Glue (Xử lý Batch/ETL).            | 07/11/2025   | 07/11/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+### Kết quả đạt được tuần 9:
 
-### Week 9 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- **Xử lý Streaming:** Hiểu được cơ chế truyền tải dữ liệu theo thời gian thực (real-time) với Kinesis và cách Firehose đơn giản hóa việc nạp dữ liệu.
+- **Quản lý Metadata:** Thành thạo việc sử dụng **Glue Data Catalog** và **Crawler** để khám phá (discover) và quản lý Metadata cho dữ liệu trong S3.
+- **ETL Cơ bản:** Nắm được quy trình Extract, Transform, Load (ETL) và đã thực hành tạo **Glue ETL Job** để xử lý dữ liệu.
+- **Tích hợp:** Thực hành thành công việc truyền dữ liệu từ nguồn (Firehose) đến đích (S3) và xử lý dữ liệu thô.
+- **Khái niệm Big Data:** Phân biệt được các dịch vụ phù hợp cho phân tích dữ liệu Batch (Glue) và Streaming (Kinesis).

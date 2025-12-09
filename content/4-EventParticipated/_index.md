@@ -1,145 +1,91 @@
-# Summary Report: “AI-Driven Development Life Cycle: Reimagining Software Engineering”
-
-## Event Objectives
-
-- Explore how AI transforms the modern software development life cycle (SDLC)
-- Demonstrate AI-assisted coding, testing, deployment, and maintenance workflows
-- Share best practices for integrating AI copilots and automation in development pipelines
-- Present AWS tools and services that enable AI-driven software engineering at scale
-
+---
+title: "Events Participated"
+date: 2025-09-09
+weight: 4
+chapter: false
+pre: " <b> 4. </b> "
 ---
 
-## Speakers
+> In this section, you need to list and describe in detail the events you participated in during your internship or work experience.
+>
+> Each event should be presented in the format Event 1, Event 2, Event 3…, along with the following details:
+>
+> - Event name
+> - Date and time
+> - Location (if applicable)
+> - Your role in the event (attendee, event support, speaker, etc.)
+> - A brief description of the event’s content and main activities
+> - Outcomes or value gained (lessons learned, new skills, contribution to the team/project)
+> - This listing helps demonstrate your actual participation as well as the soft skills and experience you have gained from each event.
 
-- **Binh Tran** – Senior Solutions Architect, AWS
-- **Taiki Dang** – Solutions Architect, AWS
-- **Jun Kai Loke** – AI/ML Specialist SA, AWS
-- **Kien Nguyen** – Solutions Architect, AWS
-- **Michael Armentano** – Principal WW GTM Specialist, AWS
-- **Tamelly Lim** – Storage Specialist SA, AWS
+During my internship, I participated in **5 events** (including 2 separate sessions of Vietnam Cloud Day), with each event being a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
 
----
+### [Event 1](4.1-Event1/)
 
-## Key Highlights
+&emsp;**Event Name:** Vietnam Cloud Day 2025 - Keynote Address (Leadership Strategy)
 
-- Understanding the AI-Driven Development Life Cycle and its impact on software engineering
-- Integrating AI assistants into the coding and review process
-- Automating CI/CD pipelines with generative AI and predictive analytics
-- Leveraging AI for intelligent testing, debugging, and code optimization
-- Governance and observability in AI-augmented development environments
-- Demonstrations of AWS tools such as **CodeWhisperer**, **CodeCatalyst**, **CodePipeline**, and **Amazon Q Developer**
+&emsp;**Date and Time:** Thursday, September 18, 2025 (9:00 AM – 12:00 PM)
 
----
+&emsp;**Location:** Amazon Web Services Vietnam, 36th Floor, 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City
 
-## AI-Driven Development Pillars
+&emsp;**Role:** Attendee
 
-- **AI-Augmented Coding:** Use AI copilots to accelerate software creation
-- **Automated Testing and Validation:** Detect and fix defects faster using AI
-- **Continuous Delivery Optimization:** Streamline build, deploy, and monitor workflows
-- **Knowledge Management:** Use AI to analyze documentation, feedback, and historical data for improvement
+&emsp;**Brief Content Description:** Keynote speeches from senior AWS leaders and CEOs (Techcombank, U2U Network). Content focused on Cloud strategy guidance and an executive panel discussion on **Navigating the GenAI Revolution**.
 
----
+&emsp;**Outcomes or Value Gained:** Elevated strategic vision, understood the complexity of integrating AI into core business decisions, and gained perspective from leaders in a rapidly changing technological environment.
 
-## Generative AI in SDLC
+### [Event 2](4.2-Event2/)
 
-- **Four-step integration model:** Ideation → Code generation → Testing → Deployment
-- **Case studies:** Successful AI-driven development teams improving velocity and reliability
-- **Contextual awareness:** Applying AI understanding of architecture and dependencies to optimize workflow
+&emsp;**Event Name:** Vietnam Cloud Day 2025 - Track for Builders (GenAI and Data Technology)
 
----
+&emsp;**Date and Time:** Thursday, September 18, 2025 (1:00 PM – 5:00 PM)
 
-## Event-Driven and AI-Oriented Architecture
+&emsp;**Location:** Amazon Web Services Vietnam, 36th Floor, 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City
 
-- **Integration patterns:** Event sourcing, streaming, and microservice coordination
-- **Benefits:** Reduced coupling, increased agility, and proactive issue resolution
-- **Sync vs async development operations:** Managing latency, cost, and reliability trade-offs
+&emsp;**Role:** Attendee
 
----
+&emsp;**Brief Content Description:** Deep-dive technical sessions on building a **Unified Data Foundation**, the **GenAI Adoption** roadmap, the **AI-Driven Development Lifecycle (AI-DLC)** model, and principles for **Securing GenAI Applications** (Zero-Trust, Encryption).
 
-## Compute and Development Platform Evolution
+&emsp;**Outcomes or Value Gained:** Grasped modern Data Foundation and GenAI architectures. Understood how to protect GenAI across all layers (Model, Infrastructure) and the potential of AI-DLC in accelerating software development.
 
-- **Shared Responsibility Model:** EC2 → ECS → Fargate → Lambda → SageMaker → CodeWhisperer
-- **Serverless engineering benefits:** Faster prototyping, zero server management, pay-per-execution
-- **Choosing the right service:** Differentiate between developer productivity tools, AI coding assistants, and managed DevOps pipelines
+### [Event 3](4.3-Event3/)
 
----
+&emsp;**Event Name:** AWS Cloud Mastery Series #1: AI/ML/GenAI on AWS
 
-## AWS AI Tools
+&emsp;**Date and Time:** Saturday, November 15, 2025 (8:30 AM – 12:00 PM)
 
-- **Amazon Q Developer:** Enhancing developer productivity and automation in SDLC
-- **CodeWhisperer:** Context-aware code generation and review
-- **CodeCatalyst & CodePipeline:** AI-driven CI/CD orchestration
-- **Bedrock & SageMaker:** Integrating ML models into software delivery lifecycle
+&emsp;**Location:** AWS Vietnam Office, Bitexco Financial Tower, 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City
 
----
+&emsp;**Role:** Attendee
 
-## Key Takeaways
+&emsp;**Brief Content Description:** Focused on **Amazon SageMaker** (end-to-end ML platform) and **Generative AI** via **Amazon Bedrock**. Key topics included **Prompt Engineering** techniques, the **Retrieval-Augmented Generation (RAG)** architecture, and using Foundation Models.
 
-### Design Mindset
+&emsp;**Outcomes or Value Gained:** Mastered the steps for end-to-end ML deployment and gained proficiency with **Bedrock**. Understood the **RAG architecture** as a key factor for applying GenAI to real-world private data applications.
 
-- **AI-first approach:** Embed intelligence throughout the SDLC
-- **Collaboration:** Foster shared understanding between developers, data scientists, and operations teams
-- **Continuous learning:** Encourage AI feedback loops for ongoing improvement
+### [Event 4](4.4-Event4/)
 
-### Technical Architecture
+&emsp;**Event Name:** AWS Cloud Mastery Series #2: DevOps on AWS
 
-- **AI-enhanced DevOps:** Integrate automation in every development stage
-- **Use event-driven communication for scalability and real-time feedback**
-- **Integration patterns:** Choose between sync, async, or hybrid models based on workload type
-- **Compute spectrum:** Select optimal platform between VMs, containers, or serverless for AI workloads
+&emsp;**Date and Time:** Monday, November 17, 2025 (8:30 AM – 5:00 PM)
 
-### Modernization Strategy
+&emsp;**Location:** AWS Vietnam Office, Bitexco Financial Tower, 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City
 
-- **Phased AI adoption:** Introduce AI incrementally across the SDLC
-- **7Rs modernization framework:** Reimagine software delivery through AI integration
-- **Measure ROI:** Track improvements in productivity, quality, and time-to-market
+&emsp;**Role:** Attendee
 
----
+&emsp;**Brief Content Description:** A comprehensive event on **DevOps** on AWS, covering building **CI/CD Pipelines** (AWS Code Services), utilizing **Infrastructure as Code (IaC)** (CloudFormation, CDK), advanced deployment strategies (**Blue/Green, Canary**), and **Monitoring & Observability** (CloudWatch, X-Ray).
 
-## Applying to Work
+&emsp;**Outcomes or Value Gained:** Designed professional CI/CD Pipelines and learned how to apply advanced deployment strategies to ensure **Zero Downtime**. Strengthened knowledge of **DevSecOps** and **Observability** in distributed environments.
 
-- Introduce AI-assisted coding tools like **Amazon Q Developer** and **CodeWhisperer**
-- Automate testing and deployment with AI-powered CI/CD pipelines
-- Implement event-driven architecture for intelligent feedback and scaling
-- Explore managed services for AI-based development automation (**Lambda**, **CodePipeline**, **SageMaker**)
-- Integrate AI copilots to improve collaboration and decision-making across teams
+### [Event 5](4.5-Event5/)
 
----
+&emsp;**Event Name:** AWS Cloud Mastery Series #3: According to AWS Well-Architected Security Pillar
 
-## Event Experience
+&emsp;**Date and Time:** Saturday, November 29, 2025 (8:30 AM – 12:00 PM)
 
-Attending the “AI-Driven Development Life Cycle: Reimagining Software Engineering” workshop provided deep insights into how AI transforms traditional software engineering into an intelligent, automated, and outcome-driven process.
+&emsp;**Location:** AWS Vietnam Office, Bitexco Financial Tower, 2 Hai Trieu Street, Ben Nghe Ward, District 1, Ho Chi Minh City
 
-### Learning from highly skilled speakers
+&emsp;**Role:** Attendee
 
-- Experts shared how AI redefines coding, testing, and delivery workflows
-- Real-world examples highlighted measurable improvements in productivity
+&emsp;**Brief Content Description:** Focused on the **5 core security domains** of the AWS Well-Architected Framework: **IAM, Detection, Infrastructure Protection, Data Protection**, and **Incident Response**. Content covered **Zero Trust** principles, using **GuardDuty/Security Hub**, KMS, and automating incident response (IR Playbook).
 
-### Hands-on technical exposure
-
-- Practical demonstrations of AI-assisted code generation and CI/CD automation
-- Learned to balance synchronous and asynchronous workflows in AI-enabled pipelines
-
-### Leveraging modern tools
-
-- Explored AWS services such as **Amazon Q Developer**, **CodeWhisperer**, and **CodeCatalyst**
-- Understood integration patterns for modern, AI-powered development cycles
-
-### Networking and discussions
-
-- Engaged with experts and peers to exchange experiences in AI-assisted development
-- Emphasized cultural and organizational readiness for AI adoption
-
----
-
-## Lessons Learned
-
-- AI-driven workflows drastically enhance development speed and code quality
-- Incremental AI integration ensures smooth transformation and measurable ROI
-- Tools like **CodeWhisperer**, **CodeCatalyst**, and **Amazon Q Developer** accelerate modernization and innovation
-
----
-
-## Some Event Photos
-
-_Add your event photos here_
+&emsp;**Outcomes or Value Gained:** Mastered the comprehensive security structure on the Cloud. Gained knowledge on how to set up continuous threat detection and manage access rights (IAM) according to the highest AWS standards.

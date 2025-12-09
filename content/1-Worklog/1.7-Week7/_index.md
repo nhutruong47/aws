@@ -1,57 +1,37 @@
 ---
 title: "Week 7 Worklog"
-date: 2025-09-09
-weight: 1
+weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Objectives for Week 7:
 
-### Week 7 Objectives:
+- Clearly understand the role and configuration of **EC2 Auto Scaling Group (ASG)** to automatically scale resources out and in.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+[Image of AWS Auto Scaling architecture]
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+- Master the architecture and operation of **Elastic Load Balancer (ELB)** (especially ALB) to distribute traffic.
+- Proficient in using **Amazon CloudWatch** to collect metrics, logs, create Dashboards, and set up Alarms.
+- Practice setting up **Scaling Policies** based on monitoring metrics.
 
+### Tasks to be implemented this week:
 
-### Week 7 Achievements:
+| Day | Task                                                                                                                                                                                                                               | Start Date | Completion Date | Resources                                 |
+| :-- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------- | :-------------- | :---------------------------------------- |
+| 2   | - Read and understand **Auto Scaling Group (ASG)** architecture, Launch Template. <br> - Learn about Load Balancer types (Classic, Application, Network). <br> - **Practice:** Create a Launch Template and configure a basic ASG. | 20/10/2025 | 20/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Deep dive into **Application Load Balancer (ALB)** and components (Listener, Target Group, Health Check).                                                                                                                        |
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+[Image of AWS Application Load Balancer components]
+<br> - **Practice:** <br>&emsp; + Create ALB, Target Group. <br>&emsp; + Register ASG EC2 Instances into the Target Group. | 21/10/2025 | 21/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Learn about **Amazon CloudWatch** monitoring service (Metrics, Logs, Events). <br> - **Practice:** <br>&emsp; + View EC2, ALB, ASG Metrics on CloudWatch. <br>&emsp; + Create a CloudWatch Dashboard to track key metrics (CPU Utilization, Request Count). | 22/10/2025 | 22/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - Learn about **CloudWatch Alarms** and **Scaling Policy** types (Target Tracking, Step Scaling). <br> - **Practice:** <br>&emsp; + Create CloudWatch Alarm based on CPU Utilization (e.g., > 80%). <br>&emsp; + Configure Scaling Policy for ASG using the created Alarm (scale out when CPU is high). | 23/10/2025 | 23/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - **Check & Resource Cleanup:** <br> - **Practice:** <br>&emsp; + Verify Scale Out/In process is working. <br>&emsp; + **Cleanup:** Delete CloudWatch Alarms, delete ASG (will automatically terminate EC2), delete ALB, delete Launch Template. | 24/10/2025 | 24/10/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
-* Successfully created and configured an AWS Free Tier account.
+### Results achieved in Week 7:
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- **Scalability:** Successfully deployed application architecture capable of automatic scaling (Scale Out/In) via **ASG** and **Launch Template**.
+- **Load Balancing:** Understood and configured **Application Load Balancer (ALB)** to distribute traffic and perform effective Health Checks.
+- **Monitoring (Observability):** Mastered using **CloudWatch** to collect, visualize (Dashboard), and track resource health metrics.
+- **Automation:** Successfully established performance-based auto-scaling mechanisms (Scaling Policy and CloudWatch Alarms).
+- **Cost Management:** Mastered the process of cleaning up expensive resources like ALB and ASG.

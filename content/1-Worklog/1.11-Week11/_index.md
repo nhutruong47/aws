@@ -1,57 +1,33 @@
 ---
 title: "Week 11 Worklog"
-date: 2025-09-09
-weight: 2
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Objectives for Week 11:
 
-### Week 11 Objectives:
+- Clearly understand the role of **AWS WAF** (Web Application Firewall) and **AWS Shield** in protecting applications from Layer 7 attacks (WAF) and DDoS (Shield).
+- Master the operating mechanism and benefits of the intelligent threat detection service **Amazon GuardDuty**.
+- Review and apply advanced security principles such as **IAM Policy Best Practices** and **Secrets Management**.
+- Practice configuring basic security Rules.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks to be implemented this week:
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                                                                                  | Start Date | Completion Date | Resources |
+| :-- | :------------------------------------------------------------------------------------ | :--------- | :-------------- | :-------- |
+| 2   | - Read and understand **AWS WAF** architecture and **Web ACL** (Access Control List). |
 
+[Image of AWS Web ACL architecture]
+<br> - Learn about Layer 7 attacks (SQL Injection, XSS) that WAF protects against. <br> - **Practice:** Create a Web ACL and learn about Managed Rule Groups. | 17/11/2025 | 17/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Learn about **AWS Shield Standard/Advanced** (DDoS Protection) and how it integrates with WAF/Route 53. <br> - **WAF Practice:** <br>&emsp; + Create a Rate-based Rule (limit access frequency). <br>&emsp; + Test blocking specific IPs (IP Set) via WAF. | 18/11/2025 | 18/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 4 | - Learn about the threat detection service **Amazon GuardDuty** (using Machine Learning). <br> - **Practice:** Enable GuardDuty and review sample Findings (simulated threats) to understand how the service alerts. | 19/11/2025 | 19/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 5 | - Review and apply **IAM Policy Best Practices** (Principle of Least Privilege). <br> - Learn about **AWS Secrets Manager** (credential rotation) and **AWS Systems Manager Parameter Store** (configuration storage). <br> - **Practice:** Review the IAM Policies created in Week 2. | 20/11/2025 | 20/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
+| 6 | - **Summary & Resource Cleanup:** <br> - **Practice:** <br>&emsp; + Delete Web ACL/WAF Rules. <br>&emsp; + **Disable GuardDuty**. <br>&emsp; + Summarize security measures (Perimeter Security, Monitoring, Secrets Management) learned. | 21/11/2025 | 21/11/2025 | <https://cloudjourney.awsstudygroup.com/> |
 
-### Week 11 Achievements:
+### Results achieved in Week 11:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- **Perimeter Protection:** Clearly understood how WAF and Shield work at the network edge to protect resources like CloudFront, ALB.
+- **Threat Detection:** Proficient in enabling and tracking alerts from **GuardDuty** to detect suspicious behavior within the AWS account.
+- **Identity Management:** Reinforced knowledge of **IAM Policy** and understood the importance of Secrets Management using specialized services.
+- **Security Construction:** Grasped how to integrate security services into application architecture (e.g., using WAF in front of ALB).

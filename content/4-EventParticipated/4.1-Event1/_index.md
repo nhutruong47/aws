@@ -1,126 +1,74 @@
-# Event 1: Gen AI and Data
+---
+title: "Event 1: Vietnam Cloud Day 2025 - Keynote Address"
+date: 2025-09-09
+weight: 1
+chapter: false
+pre: " <b> 4.1. </b> "
+---
 
-⚠️ **Note:** The information below is for reference purposes only. Please do not copy it verbatim into your report, including this warning.
+# Summary Report: “Vietnam Cloud Day 2025: Keynote Address”
 
-## Summary Report: “Gen AI and Data Workshop”
+### Date and Topic
+
+- **Date and Time:** Thursday, September 18, 2025 (9:00 AM – 12:00 PM)
+- **Topic:** Keynote Address & Panel Discussion: Navigating the GenAI Revolution
 
 ### Event Objectives
 
-- Share best practices in leveraging Generative AI and modern data architectures
-- Introduce data-driven approaches and AI-assisted development workflows
-- Provide guidance on selecting the right compute and data services for AI workloads
-- Present AWS tools to support AI lifecycle and operationalization
+- To deliver strategic direction from the Government, AWS, and large enterprises regarding the vision for Cloud and AI in Vietnam.
+- To share the experiences and challenges faced by **Executive** leaders in adopting and managing the organizational changes brought by **Generative AI (GenAI)**.
+- To provide an overview of the role of Cloud technology in driving business innovation.
 
-### Speakers
+### Speakers/Panelists
 
-- Jun Kai Loke – AI/ML Specialist SA, AWS
-- Kien Nguyen – Solutions Architect, AWS
-- Tamelly Lim – Storage Specialist SA, AWS
-- Binh Tran – Senior Solutions Architect, AWS
-- Taiki Dang – Solutions Architect, AWS
-- Michael Armentano – Principal WW GTM Specialist, AWS
+- **Eric Yeo** - Country General Manager, Vietnam, Cambodia, Laos & Myanmar, AWS (Keynote)
+- **Jaime Valles** - Vice President, General Manager Asia Pacific and Japan, AWS (AWS Keynote)
+- **Dr. Jens Lottner** - CEO, Techcombank (Customer Keynote 1)
+- **Ms. Trang Phung** - CEO & Co-Founder, U2U Network (Customer Keynote 2)
+- **Jeff Johnson** - Managing Director, ASEAN, AWS (Moderator Panel)
+- **Vu Van** - Co-founder & CEO, ELSA Corp (Panelist)
+- **Nguyen Hoa Binh** - Chairman, Nexttech Group (Panelist)
+- **Dieter Botha** - CEO, TymeX (Panelist)
 
-### Key Highlights
+### Highlights
 
-- Understanding the role of Generative AI in modern enterprises
-- Building a unified, scalable, and governed data foundation to support AI workloads
-- Combining GenAI with data engineering to automate complex tasks
-- Optimizing AI-driven pipelines and query generation
-- Governance and security for large-scale AI and data deployments
-- Practical examples of AWS services such as S3, Glue, Redshift, Lake Formation, SageMaker, and Bedrock
+#### 1. Keynote Address & Customer Keynotes
 
-#### Generative AI and Data Modernization Pillars
+- **National & AWS Vision:** Listening to important speeches from government representatives and senior AWS leaders on the role of cloud computing and AI in digital economic growth.
+- **Enterprise Case Studies:** Learning from the digital transformation experiences and new technology adoption by large enterprises such as **Techcombank** and **U2U Network**.
 
-- **Data Pipeline Management:** Automate and monitor AI-ready pipelines
-- **Caching and Performance Strategy:** Optimize data access and processing
-- **Integration Handling:** Flexible communication between AI and data services
+#### 2. Panel discussion: Navigating the GenAI Revolution: Strategies for Executive Leadership
 
-#### Generative AI Development Approaches
-
-- **Four-step AI integration:** Identify AI use cases → Design data flow → Define automation → Deploy models
-- **Case studies:** Real-world examples of AI-assisted analytics and pipeline automation
-- **Context mapping:** Patterns for integrating AI models with existing systems
-
-#### Event-Driven and AI-Oriented Architecture
-
-- **Integration patterns:** Pub/Sub, point-to-point, streaming
-- **Benefits:** Loose coupling, scalability, and resilience
-- **Sync vs async AI operations:** Trade-offs and best practices
-
-#### Compute and Data Platform Evolution
-
-- **Shared Responsibility Model:** EC2 → ECS → Fargate → Lambda → SageMaker
-- **Serverless and AI benefits:** No server management, auto-scaling, pay-for-value
-- **Functions vs Containers vs Managed AI Services:** Criteria for appropriate choice
-
-#### AWS AI Tools
-
-- **Amazon Q Developer:** SDLC automation for AI projects
-- **Code transformation:** Modernizing legacy analytics code and pipelines
-- **AWS Transform agents:** Integrate AI into existing workloads (VMware, Mainframe, .NET)
+- **GenAI Strategy:** Leaders discussed how to steer organizations through the rapid advancements of GenAI.
+- **Innovation Culture:** Sharing insights on fostering an **innovation culture**, aligning AI initiatives with business objectives, and managing organizational change associated with AI integration.
 
 ### Key Takeaways
 
-**Design Mindset**
+#### Leadership and Strategy Mindset
 
-- Business-first approach: Focus on business outcomes, not just technology
-- Shared vocabulary: Importance of communication between business and tech teams
-- Bounded contexts: Managing complexity in AI-enabled systems
+- **GenAI is the Operational Core:** GenAI is not merely a tool for the technical team but a strategic executive issue, requiring top-to-bottom alignment with business objectives.
+- **Learning from Leaders:** Gained valuable perspectives from CEOs on how they balance the pursuit of new technology (AI) with maintaining core business stability and growth.
 
-**Technical Architecture**
+#### Expanding Network and Vision
 
-- Event and AI-driven workflow modeling techniques
-- Use event-driven communication instead of synchronous calls where possible
-- Integration patterns: When to use sync, async, pub/sub, streaming
-- Compute spectrum: Criteria for choosing VM, containers, serverless, or AI-managed services
+- **Holistic View:** Gained a comprehensive view of Cloud and AI technology trends at the national and regional levels.
+- **Understanding Challenges:** Understood the practical challenges (governance, culture, investment) that large organizations face when implementing new technologies.
 
-**Modernization Strategy**
+### Application to Work
 
-- Phased approach: Follow a clear roadmap for AI adoption
-- 7Rs framework: Multiple paths for modernizing applications and data platforms
-- ROI measurement: Evaluate business value from AI insights and operational improvements
-
-### Applying to Work
-
-- Apply AI-assisted workflows to current projects
-- Refactor pipelines and data architectures to support AI models
-- Implement event-driven patterns for AI operations
-- Adopt serverless or managed AI services: Pilot AWS Lambda, SageMaker, and Bedrock
-- Integrate Amazon Q Developer into SDLC to boost AI productivity
+- **Technology Alignment:** Applying the learned strategic mindset to align AWS tools and services (such as Bedrock/SageMaker) with specific project/company business goals.
+- **Value Proposition:** Using data and case studies from the Keynote to create clearer value propositions when discussing Cloud technology with relevant stakeholders.
 
 ### Event Experience
 
-Attending the “Gen AI and Data Workshop” was extremely valuable, providing a comprehensive view of modernizing data architectures and leveraging AI for operational efficiency. Key experiences included:
+Attending the Keynote session of **Vietnam Cloud Day 2025** provided a unique experience in terms of scale and strategic level.
 
-**Learning from highly skilled speakers**
+- **Inspirational Environment:** Witnessing top technology leaders in Vietnam and the region directly discuss the future of AI.
+- **Informational Value:** The Keynotes, particularly those from the CEOs, provided realistic perspectives and lessons on leadership capabilities in a rapidly changing technological environment.
 
-- Experts from AWS shared best practices in AI adoption and data modernization
-- Real-world case studies demonstrated practical AI use in enterprises
+> Overall, this event helped me elevate my strategic vision and understand the complexity of integrating AI into core business decisions.
 
-**Hands-on technical exposure**
-
-- Participating in sessions helped visualize AI-driven workflows
-- Learned how to design pipelines, define bounded contexts, and manage AI integration
-- Understood trade-offs between synchronous and asynchronous operations in AI
-
-**Leveraging modern tools**
-
-- Explored Amazon Q Developer for SDLC support
-- Learned to automate pipelines, code transformation, and pilot AI services
-
-**Networking and discussions**
-
-- Opportunity to exchange ideas with experts, peers, and business teams
-- Reinforced the importance of a business-first approach rather than only focusing on technology
-
-### Lessons Learned
-
-- Applying AI-assisted patterns reduces operational complexity while improving scalability and resilience
-- Phased implementation with ROI measurement is crucial for successful AI adoption
-- AWS tools like Amazon Q Developer, SageMaker, and Bedrock can significantly boost productivity and shorten deployment cycles
-
-### Some Event Photos
-
-- Add your event photos here
-
-**Overall**, the event provided both technical knowledge and practical insights, reshaping perspectives on AI-driven data architectures, system modernization, and cross-team collaboration.
+![Event image](/images/g.jpg)
+![Event image](/images/dg.jpg)
+![Event image](/images/sdg.jpg)
+![Event image](/images/xinchao.jpg)

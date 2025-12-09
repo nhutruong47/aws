@@ -1,39 +1,46 @@
 ---
 title: "Self-Assessment"
-date: 2025-09-09
+date: 2025-12-09
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+Throughout my internship at **Amazon Web Services (AWS) Vietnam** (under the First Cloud Journey program) from **September 8, 2025** until now, I have had the opportunity to learn, train, and apply the knowledge acquired at school to a real-world work environment.
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
+I have participated in **researching and deploying Cloud Computing solutions, completing specialized Labs, and passing the Midterm exam**, thereby improving my skills in **Full-stack Programming (Java/React), System Deployment, Deep Dive thinking, and Time Management**.
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+Regarding professional conduct, I have consistently strived to complete tasks well and actively communicated with my Mentor to enhance work efficiency. To objectively reflect upon my internship process, I assess myself based on the criteria below:
 
-To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
+| No. | Criteria                                 | Description                                                                                         | Excellent | Good | Average     |
+| --- | ---------------------------------------- | --------------------------------------------------------------------------------------------------- | --------- | ---- | ----------- |
+| 1   | **Knowledge and Professional Skills**    | Understanding of the industry, application of knowledge to practice, tool proficiency, work quality | ✅        | ☐    | ☐           |
+| 2   | **Learning Agility**                     | Assimilating new knowledge, learning quickly                                                        | ☐         | ✅   | ☐           |
+| 3   | **Proactiveness**                        | Self-researching, taking tasks without waiting for instruction                                      | ✅        | ☐    | ☐           |
+| 4   | **Sense of Responsibility**              | Completing work on time, ensuring quality                                                           | ✅        | ☐    | ☐           |
+| 5   | **Discipline**                           | Adhering to schedule, rules, and work procedures                                                    | ☐         | ☐    | ✅          |
+| 6   | **Growth Mindset**                       | Being receptive to feedback and self-improvement                                                    | ☐         | ✅   | ☐           |
+| 7   | **Communication**                        | Presenting ideas, reporting work clearly                                                            | ☐         | ✅   | ☐           |
+| 8   | **Teamwork**                             | Working effectively with colleagues, participating in the team                                      | ✅        | ☐    | ☐           |
+| 9   | **Professional Conduct**                 | Respecting colleagues, partners, and the work environment                                           | ✅        | ☐    | ☐           |
+| 10  | **Problem-Solving Skills**               | Identifying issues, proposing solutions, creativity                                                 | ☐         | ✅   | ☐           |
+| 11  | **Contribution to Project/Organization** | Work effectiveness, innovative suggestions, recognition from the team                               | ✅        | ☐    | ☐           |
+| 12  | **Overall**                              | General assessment of the entire internship process                                                 | ✅        | ☐    | ☐           |
 
-| No. | Criteria                            | Description                                                                                      | Good | Fair | Average |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | ---- | ---- | ------- |
-| 1   | **Professional knowledge & skills** | Understanding of the field, applying knowledge in practice, proficiency with tools, work quality | ✅    | ☐    | ☐       |
-| 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅    | ☐       |
-| 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅    | ☐    | ☐       |
-| 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅       |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅    | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅    | ☐       |
-| 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐    | ☐       |
-| 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ✅    | ☐    | ☐       |
-| 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅    | ☐       |
-| 11  | **Contribution to project/team**    | Work effectiveness, innovative ideas, recognition from the team                                  | ✅    | ☐    | ☐       |
-| 12  | **Overall**                         | General evaluation of the entire internship period                                               | ✅    | ☐    | ☐       |
+### Personal Improvement Plan
 
-### Needs Improvement
+Based on the assessment table above, I recognize several areas that need improvement to become a more professional engineer:
 
-* Strengthen discipline and strictly comply with the rules and regulations of the company or any organization  
-* Improve problem-solving thinking  
-* Enhance communication skills in both daily interactions and professional contexts, including handling situations effectively
+- **Enhance Discipline and Process Compliance:**
+
+- I realize I need to be more serious about adhering to organizational hours and administrative regulations.
+  - _Action:_ Establish a tighter personal work schedule (Timeboxing), ensure punctuality for all meetings (Sync-ups), and strictly adhere to AWS security/procedural guidelines.
+
+- **Improve Problem-Solving Skills:**
+
+- Currently, I tend to focus on finding a quick fix rather than investigating the root cause.
+  - _Action:_ Rigorously apply the **"Deep Dive"** mindset. When encountering an error, instead of just making the code run, I will dedicate time to analyze _why_ the error occurred and _how_ to prevent it in the future (using the 5 Whys methodology).
+
+- **Boost Communication Skills:**
+    - I sometimes struggle when presenting complex technical ideas or when asking for support.
+    - _Action:_ Practice formulating concise questions with clear context when seeking assistance from the Mentor. Concurrently, proactively participate more in technical sharing sessions to build confidence.

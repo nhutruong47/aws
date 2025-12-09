@@ -1,57 +1,33 @@
 ---
 title: "Week 3 Worklog"
-date: 2025-09-09
-weight: 1
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### Objectives for Week 3:
 
-### Week 3 Objectives:
+- Clearly understand the role and core components of the **Amazon Virtual Private Cloud (VPC)** virtual network service.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+[Image of AWS VPC architecture diagram]
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+- Master the creation and configuration of VPC, Subnets (Public/Private), Internet Gateway (IGW), and Route Tables.
+- Master the two-layer security mechanism: **Security Group (SG)** and **Network Access Control List (NACL)**.
+- Practice deploying an EC2 Instance into a custom VPC.
 
+### Tasks to be implemented this week:
 
-### Week 3 Achievements:
+| Day | Task                                                                                                                                                                                                                                                                                                                                                             | Start Date | Completion Date | Resources                                 |
+| :-- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------- | :-------------- | :---------------------------------------- |
+| 2   | - Read and understand **VPC** architecture: Concepts of IP, CIDR Block, Subnet, Availability Zone (AZ). <br> - **Practice:** Create a new VPC with a custom CIDR range (e.g., `10.0.0.0/16`). <br> - Create two Subnets: one Public and one Private.                                                                                                             | 22/09/2025 | 22/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 3   | - Learn about **Internet Gateway (IGW)**, **Route Table**, and their roles in providing Internet access. <br> - **Practice:** <br>&emsp; + Create and attach IGW to the VPC. <br>&emsp; + Configure **Public Route Table** to route traffic to IGW. <br>&emsp; + Associate the Public Route Table with the Public Subnet.                                        | 23/09/2025 | 23/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 4   | - Learn about the **Security Group (SG)** security mechanism (Stateful) and its operating principles. <br> - **Practice:** <br>&emsp; + Launch an EC2 Instance in the Public Subnet. <br>&emsp; + Configure SG to only allow SSH/RDP (Port 22/3389) from personal IP. <br>&emsp; + Attempt access to verify SG security features.                                | 24/09/2025 | 24/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 5   | - Learn about the **Network Access Control List (NACL)** security mechanism (Stateless). <br> - **Practice:** <br>&emsp; + Configure NACL for the Public Subnet (test creating Deny rules). <br>&emsp; + Detailed differentiation between SG and NACL when handling inbound/outbound traffic. <br>&emsp; + Learn the concept of NAT Gateway (in Private Subnet). | 25/09/2025 | 25/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 6   | - **Cleanup & General Review:** <br> - **Practice:** <br>&emsp; + Terminate the EC2 Instance. <br>&emsp; + **Delete all VPC components** created in the correct order (Detach IGW -> Delete Subnets -> Delete Route Tables -> Delete VPC) to clean up costs. <br>&emsp; + Summarize the VPC components learned.                                                  | 26/09/2025 | 26/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Results achieved in Week 3:
 
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+- **VPC Configuration:** Understood and manually created VPC, Subnets (Public/Private), Internet Gateway, and Route Tables to route traffic.
+- **Network Security:** Mastered and distinguished the two-layer security mechanism: **Security Group** (Stateful, operates at the Instance level) and **NACL** (Stateless, operates at the Subnet level).
+- **Basic Deployment:** Successfully deployed an EC2 Instance in a self-created VPC and verified Internet connectivity.
+- **Cleanup Skills:** Successfully performed network resource cleanup in the correct order (ensuring no unnecessary resources are left behind), contributing to effective cost management.
