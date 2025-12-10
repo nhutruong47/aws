@@ -70,7 +70,7 @@ Tham gia phiên Keynote của **Vietnam Cloud Day 2025** mang lại trải nghi�
 
 ---
 
-![Event image](/images/g.jpg)
-![Event image](/images/dg.jpg)
-![Event image](/images/sdg.jpg)
-![Event image](/images/xinchao.jpg)
+![Event image](/images/even1.3.jpg)
+[Event image](/images/hah.jpg)
+![Event image](/images/dsf.jpg)
+![Event image](/images/dfg.jpg)

@@ -73,7 +73,7 @@ Sự kiện này là một buổi học thực tế, nhấn mạnh vào việc c
 
 ---
 
-![Event image](/images/even1.3.jpg)
+![Event image](/images/even1.1.jpg)
 ![Event image](/images/even2.5.jpg)
 ![Event image](/images/dfhgj.jpg)
 ![Event image](/images/dg.jpg)

@@ -71,7 +71,7 @@ This event was a practical session, emphasizing the shift from theory to impleme
 
 > This event strengthened my knowledge of building, deploying, and operating software efficiently, securely, and automatically on AWS.
 
-![Event image](/images/even1.3.jpg)
+![Event image](/images/even1.1.jpg)
 ![Event image](/images/even2.5.jpg)
 ![Event image](/images/dfhgj.jpg)
 ![Event image](/images/dg.jpg)

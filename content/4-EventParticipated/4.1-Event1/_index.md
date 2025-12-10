@@ -67,8 +67,8 @@ Attending the Keynote session of **Vietnam Cloud Day 2025** provided a unique ex
 - **Informational Value:** The Keynotes, particularly those from the CEOs, provided realistic perspectives and lessons on leadership capabilities in a rapidly changing technological environment.
 
 > Overall, this event helped me elevate my strategic vision and understand the complexity of integrating AI into core business decisions.
-
-![Event image](/images/g.jpg)
-![Event image](/images/dg.jpg)
-![Event image](/images/sdg.jpg)
-![Event image](/images/xinchao.jpg)
+> ![Event image](/images/even1.3.jpg)
+> [Event image](/images/hah.jpg)
+> ![Event image](/images/dsf.jpg)
+> ![Event image](/images/dfg.jpg)
+> !
